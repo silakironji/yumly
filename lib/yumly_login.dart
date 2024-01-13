@@ -14,9 +14,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-          color: Colors.grey,
+          color: Color.fromARGB(255, 255, 255, 255),
           child: SafeArea(
-              child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [
+              child:
+                  Column(mainAxisAlignment: MainAxisAlignment.end, children: [
             (Image.asset(
               'assets/images/yumly.jpg',
               fit: BoxFit.contain,
@@ -24,70 +25,87 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 160,
             )),
             const Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding:EdgeInsets.all(8.0),
               child: Text(
                 "Welcome back to Yumly",
-                style: TextStyle(fontSize: 28, color: Colors.black),
+                style: TextStyle(
+                    fontSize: 28,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold),
               ),
             ),
             const Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(8.0),
               child: Text(
                 "Login and let the feast begin!",
                 style: TextStyle(fontSize: 18, color: Colors.black),
               ),
             ),
-
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextFormField(
                   obscureText: true,
-                  decoration: InputDecoration(
-                    labelText: 'Enter your Email',
-                    contentPadding: EdgeInsets.symmetric(
-                      vertical: 15,
-                      horizontal: 10,
-                  ))),
-            ),
-
+                  decoration: const InputDecoration(
+                      labelText: 'Enter your Email',
+                      contentPadding: EdgeInsets.symmetric(
+                        vertical: 15,
+                        horizontal: 10,
+                      )
+                      )
+                      ),
+                      ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextFormField(
                   obscureText: true,
-                  decoration: InputDecoration(
-                    labelText: 'Password',
-                    contentPadding: EdgeInsets.symmetric(
-                      vertical: 15,
-                      horizontal: 10,
-                  ))),
+                  decoration: const InputDecoration(
+                      labelText: 'Password',
+                      contentPadding: EdgeInsets.symmetric(
+                        vertical: 15,
+                        horizontal: 10,
+                      ))),
             ),
-
             const Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                "Forgot password?",
-                style: TextStyle(fontSize: 18, color: Colors.black),
+              padding: EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Spacer(),
+                  Text(
+                    "Forgot password?",
+                    style: TextStyle(fontSize: 18, color: Color.fromRGBO(36, 130, 50, 1)),
+                  ),
+                ],
               ),
             ),
             ElevatedButton(
-                    onPressed: () {},
-                   child:Container(
-              
-                    style:ButtonStyleButton(backgroundColor: MaterialStateProperty.all<Color>(Colors.blue)),
-                  child: const Text(
-                    "Login",
-                    style: TextStyle(fontSize: 16, color: Colors.black),
-                      
-                  ),  
-                   ) ),       
-            const Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                "or",
-                style: TextStyle(fontSize: 19, color: Colors.black),
-              ),
-            ),
-           Row(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromRGBO(36, 130, 50, 1),
+                ),
+                onPressed: () {},
+                child: const Text(
+                  "Login",
+                  style: TextStyle(fontSize: 16, color: Colors.black),
+                )),
+            const Row(
+              children: [
+                Expanded(
+                  child: Divider(),
+    ),
+                Padding(
+                  padding:EdgeInsets.all(8.0),
+                  child: Text(
+                    "or",
+                    style: TextStyle(fontSize: 19, color: Colors.black),
+                    ),
+                    ),
+                Expanded(
+                  child: Divider(),
+                  ),
+                  ],
+                  ),
+
+            Expanded(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   // Facebook login option
@@ -95,32 +113,33 @@ class _MyHomePageState extends State<MyHomePage> {
                     onTap: () {
                       // Handle Facebook login
                     },
-                    child: Image.asset(
-                      'assets/images/facebook.png', // Replace with the actual path to your Facebook logo
-                      width: 160,
-                      height: 160,
+                    child: Expanded(
+                      child: Image.asset(
+                        'assets/images/g.png',
+                        width: 60, // Replace with the actual path to your Facebook logo
+                      ),
                     ),
                   ),
-                  SizedBox(width: 16), // Adjust the spacing between the logos
-                  // Google login option
+                  // SizedBox(width: 16), // Adjust the spacing between the logos
+                  
                   InkWell(
                     onTap: () {
                       // Handle Google login
                     },
-                    child: Image.asset(
-                      'assets/images/google.png', // Replace with the actual path to your Google logo
-                      width: 160,
-                      height: 160,
+                    child: Expanded(
+                      child: Image.asset(
+                        'assets/images/g.png', 
+                        width: 60,
+                      ),
                     ),
                   ),
                 ],
               ),
-
-
-          ]
-          )
-          )
-          ),
-    );
-  }
-}
+            ),
+            ]
+            )
+            )
+            ),
+            );
+            }
+            }
