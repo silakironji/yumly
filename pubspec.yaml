@@ -64,6 +64,13 @@ flutter:
      - assets/images/g.png
      - assets/images/google.png
      - assets/images/f.png
+     - assets/images/ChickenBiriyani.png
+     - assets/images/profile.jpg
+     - assets/images/delicious.jpg
+     - assets/images/gpay.png
+     - assets/images/mastercard.png
+     
+     
      
      
   #   - images/a_dot_ham.jpeg

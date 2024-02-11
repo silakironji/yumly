@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
-  final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,7 +80,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color.fromRGBO(36, 130, 50, 1),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                   Navigator.of(context).pushNamed("/home");
+                },
                 child: const Text(
                   "Login",
                   style: TextStyle(fontSize: 16, color: Colors.black),
